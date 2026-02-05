@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Sabouh | Digital Product Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-purple: #a371f7;
+            --accent-orange: #f78166;
+            --accent-pink: #ff7b72;
+            --border-color: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-info .tagline {
+            font-size: 1.25rem;
+            color: var(--accent-blue);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .header-info .location {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.75rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--text-primary);
+            border-color: var(--accent-blue);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+        }
+
+        .about-text strong {
+            color: var(--text-primary);
+        }
+
+        /* What I Do */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .expertise-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .expertise-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .expertise-card p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Tech Stack */
+        .tech-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-category h4 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .badge:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-1px);
+        }
+
+        /* Experience */
+        .experience-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .experience-header h4 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+        }
+
+        .experience-header .period {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            background: var(--bg-tertiary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .experience-company {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-location {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.875rem;
+        }
+
+        .cert-item .check {
+            color: var(--accent-green);
+        }
+
+        /* Education */
+        .education-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-icon {
+            font-size: 1.5rem;
+        }
+
+        .education-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-info p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .education-info .year {
+            color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        /* GitHub Stats */
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .stats-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .contact-item .icon {
+            font-size: 1.25rem;
+        }
+
+        .contact-item .label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item .value {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent-blue);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.75rem 1rem;
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .container {
+                padding: 8rem 1rem 2rem;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-info h1 {
+                font-size: 1.75rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="nav-brand">Mohammad Sabouh</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <img src="https://raw.githubusercontent.com/MohSabouh/Mohammad-Sabouh_CV/main/mohammad-sabouh.jpeg" alt="Mohammad Sabouh" class="profile-photo">
+            <div class="header-info">
+                <h1>Mohammad Sabouh</h1>
+                <p class="tagline">Digital Product Manager | Fintech | Banking</p>
+                <p class="location">📍 Amman, Jordan | Riyadh, KSA</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mohsabouh/" target="_blank">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="mailto:mohammad.sabouh@outlook.com">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+                        Email
+                    </a>
+                    <a href="https://twitter.com/MohSabouh" target="_blank">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        Twitter
+                    </a>
+                    <a href="tel:+962779922033">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">👋 About Me</h2>
+            <p class="about-text">
+                I'm a <strong>Digital Product Manager</strong> with <strong>10+ years</strong> of experience building and scaling banking, fintech, payments, and digital channel products across <strong>Jordan</strong> and <strong>KSA</strong>.
+                <br><br>
+                I focus on turning strategy, data, and customer insights into clear product roadmaps, shipped features, and measurable impact — <strong>bridging business, technology, and customer experience</strong>.
+            </p>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="section">
+            <h2 class="section-title">🏦 What I Do</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h4>🏦 Banking & Fintech</h4>
+                    <p>Mobile Banking, Online Banking, Digital Onboarding, KYC</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>💳 Payments</h4>
+                    <p>CliQ, eFawateercom, Digital Wallets, Money Transfers</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>📊 Product Strategy</h4>
+                    <p>Roadmaps, Backlog Prioritization, Go-to-Market Execution</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>🎯 Customer Growth</h4>
+                    <p>Segmentation, Journey Optimization, Churn Reduction</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>📱 Digital Channels</h4>
+                    <p>B2C/B2B Products, SaaS, CRM, Mobile Apps</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="tools" class="section">
+            <h2 class="section-title">🛠 Tech Stack & Tools</h2>
+            
+            <div class="tech-category">
+                <h4>Product & Project Management</h4>
+                <div class="tech-badges">
+                    <span class="badge">Jira</span>
+                    <span class="badge">Trello</span>
+                    <span class="badge">Notion</span>
+                    <span class="badge">Miro</span>
+                    <span class="badge">ClickUp</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h4>Data & Analytics</h4>
+                <div class="tech-badges">
+                    <span class="badge">Power BI</span>
+                    <span class="badge">Tableau</span>
+                    <span class="badge">Google Analytics</span>
+                    <span class="badge">Firebase</span>
+                    <span class="badge">MoEngage</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h4>Design & Prototyping</h4>
+                <div class="tech-badges">
+                    <span class="badge">Figma</span>
+                    <span class="badge">Adobe XD</span>
+                    <span class="badge">Balsamiq</span>
+                    <span class="badge">Visio</span>
+                    <span class="badge">Lucidchart</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h4>CRM Platforms</h4>
+                <div class="tech-badges">
+                    <span class="badge">Dynamics 365</span>
+                    <span class="badge">Zoho CRM</span>
+                    <span class="badge">Odoo</span>
+                    <span class="badge">CRM Next</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h4>Customer Insights & A/B Testing</h4>
+                <div class="tech-badges">
+                    <span class="badge">Hotjar</span>
+                    <span class="badge">UXCam</span>
+                    <span class="badge">AB Tasty</span>
+                    <span class="badge">Kameleoon</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h4>AI & Development Tools</h4>
+                <div class="tech-badges">
+                    <span class="badge">Claude</span>
+                    <span class="badge">VS Code</span>
+                    <span class="badge">Google Colab</span>
+                    <span class="badge">Google AI Studio</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h4>Methodologies</h4>
+                <div class="tech-badges">
+                    <span class="badge">Scrum</span>
+                    <span class="badge">Kanban</span>
+                    <span class="badge">Agile</span>
+                    <span class="badge">OKRs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title">💼 Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4>Senior Product Owner</h4>
+                    <span class="period">Sep 2024 – Present</span>
+                </div>
+                <p class="experience-company">Ejada Systems / Neoleap-Urpay Wallet</p>
+                <p class="experience-location">📍 Jordan & KSA</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4>Business Program Manager</h4>
+                    <span class="period">Apr 2022 – May 2024</span>
+                </div>
+                <p class="experience-company">Arab Bank</p>
+                <p class="experience-location">📍 Jordan</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4>Products & Services Marketing Expert</h4>
+                    <span class="period">May 2017 – Jan 2021</span>
+                </div>
+                <p class="experience-company">Orange Jordan / Orange Money</p>
+                <p class="experience-location">📍 Jordan</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4>Project Coordinator / Manager</h4>
+                    <span class="period">Feb 2013 – May 2017</span>
+                </div>
+                <p class="experience-company">Pencilz Art Studios</p>
+                <p class="experience-location">📍 Jordan</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4>Reports Analysis Officer</h4>
+                    <span class="period">Aug 2013 – Dec 2015</span>
+                </div>
+                <p class="experience-company">Capital Bank of Jordan</p>
+                <p class="experience-location">📍 Jordan</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h4>Product Support Officer</h4>
+                    <span class="period">Aug 2012 – Aug 2013</span>
+                </div>
+                <p class="experience-company">ICS Financial Systems</p>
+                <p class="experience-location">📍 Jordan</p>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <h2 class="section-title">🏆 Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <span class="check">✅</span>
+                    Certified Scrum Product Owner (CSPO)
+                </div>
+                <div class="cert-item">
+                    <span class="check">✅</span>
+                    Scrum Master Accredited
+                </div>
+                <div class="cert-item">
+                    <span class="check">✅</span>
+                    Google Analytics IQ
+                </div>
+                <div class="cert-item">
+                    <span class="check">✅</span>
+                    ITIL® IT Service Management
+                </div>
+                <div class="cert-item">
+                    <span class="check">✅</span>
+                    Scrum Fundamentals Certified
+                </div>
+                <div class="cert-item">
+                    <span class="check">✅</span>
+                    Kanban Essentials with AI
+                </div>
+                <div class="cert-item">
+                    <span class="check">✅</span>
+                    OKR Fundamentals with AI
+                </div>
+                <div class="cert-item">
+                    <span class="check">✅</span>
+                    Business Analysis with AI
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2 class="section-title">🎓 Education</h2>
+            
+            <div class="education-item">
+                <span class="education-icon">🎓</span>
+                <div class="education-info">
+                    <h4>M.Sc. Business Entrepreneurship</h4>
+                    <p>Princess Sumaya University for Technology</p>
+                    <p class="year">2015</p>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <span class="education-icon">🎓</span>
+                <div class="education-info">
+                    <h4>B.Sc. Management Information Systems</h4>
+                    <p>Princess Sumaya University for Technology</p>
+                    <p class="year">2012</p>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <span class="education-icon">🌍</span>
+                <div class="education-info">
+                    <h4>Applied Economics (Exchange Program)</h4>
+                    <p>Hasselt University, Belgium</p>
+                    <p class="year">2011</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Stats Section -->
+        <section id="stats" class="section">
+            <h2 class="section-title">📈 GitHub Stats</h2>
+            <div class="stats-container">
+                <img src="https://github-readme-stats.vercel.app/api?username=MohSabouh&show_icons=true&theme=dark&bg_color=0d1117&title_color=58a6ff&text_color=8b949e&icon_color=58a6ff&hide_border=true" alt="GitHub Stats">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=MohSabouh&theme=dark&background=0d1117&ring=58a6ff&fire=ff6b6b&currStreakLabel=58a6ff&hide_border=true" alt="GitHub Streak">
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">📫 Let's Connect</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <div>
+                        <p class="label">Location</p>
+                        <p class="value">Amman, Jordan | Riyadh, KSA</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📧</span>
+                    <div>
+                        <p class="label">Email</p>
+                        <p class="value">mohammad.sabouh@outlook.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📱</span>
+                    <div>
+                        <p class="label">Phone (Jordan)</p>
+                        <p class="value">+962 77 992 2033</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📱</span>
+                    <div>
+                        <p class="label">Phone (KSA)</p>
+                        <p class="value">+966 56 892 1367</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-buttons">
+                <a href="https://www.linkedin.com/in/mohsabouh/" class="btn" target="_blank">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Connect on LinkedIn
+                </a>
+                <a href="mailto:mohammad.sabouh@outlook.com" class="btn btn-secondary">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+                    Send Email
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>⭐ Made with ❤️ by <a href="https://github.com/MohSabouh">Mohammad Sabouh</a></p>
+    </footer>
+
+</body>
+</html>
