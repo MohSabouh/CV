@@ -82,6 +82,23 @@
             background: var(--bg-tertiary);
         }
 
+        .download-cv-btn {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-blue) !important;
+            color: white !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .download-cv-btn:hover {
+            background: #4a8eff !important;
+            transform: translateY(-1px);
+        }
+
         /* Main Container */
         .container {
             max-width: 1000px;
@@ -127,6 +144,25 @@
             margin-bottom: 1rem;
         }
 
+        .header-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .header-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .header-contact-item svg {
+            flex-shrink: 0;
+        }
+
         .social-links {
             display: flex;
             gap: 0.5rem;
@@ -150,6 +186,27 @@
         .social-links a:hover {
             color: var(--text-primary);
             border-color: var(--accent-blue);
+        }
+
+        /* Header Navigation */
+        .header-nav {
+            display: flex;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .header-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .header-nav a:hover {
+            color: var(--text-primary);
         }
 
         /* Section Styles */
@@ -182,10 +239,10 @@
             color: var(--text-primary);
         }
 
-        /*Core Competencies*/
+        /* What I Do */
         .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
         }
 
@@ -352,6 +409,48 @@
             font-weight: 500;
         }
 
+        .experience-products {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .key-achievements {
+            background: var(--bg-primary);
+            border: 1px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .key-achievements-title {
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .achievement-item {
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .achievement-item::before {
+            content: "▲";
+            color: var(--accent-green);
+            font-size: 0.7rem;
+        }
+
         /* Certifications */
         .cert-grid {
             display: grid;
@@ -462,6 +561,59 @@
             border: 1px solid var(--border-color);
         }
 
+        /* Contact Info List */
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-info-item svg {
+            color: var(--text-secondary);
+            flex-shrink: 0;
+        }
+
+        .contact-intro {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .contact-social-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-social-buttons a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .contact-social-buttons a:hover {
+            color: var(--text-primary);
+            border-color: var(--accent-blue);
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -516,6 +668,10 @@
                 flex-direction: column;
             }
 
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
             .experience-top {
                 flex-direction: column;
                 align-items: flex-start;
@@ -530,12 +686,14 @@
         <a href="#" class="nav-brand">Mohammad Sabouh</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#tools">Tools</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#tools">Skills</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="Mohammad_Sabouh_CV.pdf" download class="download-cv-btn">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Download CV
+            </a></li>
         </ul>
     </nav>
 
@@ -546,25 +704,24 @@
             <img src="https://raw.githubusercontent.com/MohSabouh/Mohammad-Sabouh_CV/main/mohammad-sabouh.jpeg" alt="Mohammad Sabouh" class="profile-photo">
             <div class="header-info">
                 <h1>Mohammad Sabouh</h1>
-                <p class="tagline">Digital Product Manager | Fintech | Banking</p>
-                <p class="location">Amman, Jordan</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/mohsabouh/" target="_blank">
+                <p class="tagline">Digital Product Manager</p>
+                <div class="header-contact">
+                    <div class="header-contact-item">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>Amman, Jordan</span>
+                    </div>
+                    <div class="header-contact-item">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e0ad8f88818d8d8184ce9381828f9588a08f95948c8f8f8bce838f8d">[email&#160;protected]</a></span>
+                    </div>
+                    <div class="header-contact-item">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span>+962 77 992 2033</span>
+                    </div>
+                    <div class="header-contact-item">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        LinkedIn
-                    </a>
-                    <a href="/cdn-cgi/l/email-protection#74191b1c15191915105a0715161b011c341b0100181b1b1f5a171b19">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-                        Email
-                    </a>
-                    <a href="https://twitter.com/MohSabouh" target="_blank">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        Twitter
-                    </a>
-                    <a href="tel:+962779922033">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        WhatsApp
-                    </a>
+                        <span>Mohammad Sabouh</span>
+                    </div>
                 </div>
             </div>
         </header>
@@ -573,15 +730,17 @@
         <section id="about" class="section">
             <h2 class="section-title">About Me</h2>
             <p class="about-text">
-                I'm a <strong>Digital Product Manager</strong> with <strong>10+ years</strong> of experience building and scaling banking, fintech, payments, and digital channel products across <strong>Jordan</strong> and <strong>KSA</strong>.
+                I'm a <strong>senior digital product leader</strong> with <strong>10+ years</strong> of experience building and scaling banking, fintech, payments, and digital channel products across <strong>Jordan</strong> and <strong>KSA</strong>.
                 <br><br>
-                I focus on turning strategy, data, and customer insights into clear product roadmaps, shipped features, and measurable impact — <strong>bridging business, technology, and customer experience</strong>.
+                I specialize in owning complex products end-to-end — from strategy and discovery to delivery and growth — turning customer insights, market data, and business goals into clear roadmaps, shipped features, and measurable commercial impact.
+                <br><br>
+                I've led products across wallets, cards, CRM, merchant platforms, mobile apps, and web channels, working at the intersection of product, marketing, sales, risk, and operations to drive adoption, revenue, and retention at scale.
             </p>
         </section>
 
-        <!-- Expertise Section -->
+        <!-- Core Competencies Section -->
         <section id="expertise" class="section">
-            <h2 class="section-title">What I Do</h2>
+            <h2 class="section-title">Core Competencies</h2>
             <div class="expertise-grid">
                 <div class="expertise-card">
                     <h4>Product Management</h4>
@@ -600,6 +759,258 @@
                     <p>Mobile Banking, Online Banking, Digital Onboarding, KYC, Payments, CliQ, eFawateercom, Digital Wallets, Money Transfers, POS, Payment Gateway</p>
                 </div>
             </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Experience</h2>
+
+            <!-- Ejada Systems -->
+            <div class="experience-item">
+                <div class="experience-top">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h4>Senior Product Owner</h4>
+                            <p class="experience-company-location">Ejada Systems (Neoleap / urpay – KSA) · Jordan & KSA</p>
+                        </div>
+                        <span class="period">Sep 2024 – Oct 2025</span>
+                    </div>
+                </div>
+                <p class="experience-products">Merchant Portal & App · CRM · urpay Wallet</p>
+                <div class="key-impact">
+                    <div class="key-impact-title">◎ Key Impact</div>
+                    <div class="impact-badges">
+                        <span class="impact-badge">Fintech Product Ownership</span>
+                        <span class="impact-badge">Regulatory Compliance</span>
+                        <span class="impact-badge">Agile Delivery</span>
+                        <span class="impact-badge">Merchant Growth</span>
+                    </div>
+                </div>
+                <ul class="experience-bullets">
+                    <li>Defined product vision aligned with business strategy, customer needs, and regulatory requirements.</li>
+                    <li>Owned and prioritized the product backlog, translating business goals into clear user stories.</li>
+                    <li>Managed product roadmaps and delivery milestones for large-scale fintech solutions.</li>
+                    <li>Acted as the primary product decision maker, coordinating with business, tech, risk, and operations.</li>
+                    <li>Collaborated closely with engineering and UX to deliver secure, compliant, and customer-centric products.</li>
+                    <li>Led market and competitor analysis to drive innovation and product enhancements.</li>
+                </ul>
+                <div class="key-achievements">
+                    <div class="key-achievements-title">🏆 Key Achievements</div>
+                    <div class="achievements-grid">
+                        <span class="achievement-item">Ranked #1 squad for 2024 & 2025</span>
+                        <span class="achievement-item">Launched 13 major releases</span>
+                        <span class="achievement-item">Revamped 4 full products</span>
+                        <span class="achievement-item">Integrated with 7 third-party providers</span>
+                        <span class="achievement-item">+20% registered merchants</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arab Bank -->
+            <div class="experience-item">
+                <div class="experience-top">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h4>Business Program Manager</h4>
+                            <p class="experience-company-location">Arab Bank · Jordan</p>
+                        </div>
+                        <span class="period">Apr 2022 – May 2024</span>
+                    </div>
+                </div>
+                <p class="experience-products">Arabi Mobile · CRM System · Customer Communication Platform</p>
+                <div class="key-impact">
+                    <div class="key-impact-title">◎ Key Impact</div>
+                    <div class="impact-badges">
+                        <span class="impact-badge">Customer Programs</span>
+                        <span class="impact-badge">Segmentation Strategy</span>
+                        <span class="impact-badge">Digital Journeys</span>
+                        <span class="impact-badge">CRM & Analytics</span>
+                        <span class="impact-badge">Revenue Growth</span>
+                    </div>
+                </div>
+                <ul class="experience-bullets">
+                    <li>Owned segment strategy for Arabi Extra, Mass, and Cross-Border customers across digital channels.</li>
+                    <li>Led the revamp and relaunch of Arabi Extra Program, introducing new features and value propositions.</li>
+                    <li>Defined and executed digital strategies focused on acquisition, activation, retention, and profitability.</li>
+                    <li>Designed segment-specific propositions across products, pricing, services, and lifestyle offers.</li>
+                    <li>Mapped and optimized end-to-end digital customer journeys (onboarding, login, servicing, cross-border flows).</li>
+                    <li>Leveraged performance dashboards and behavioral data to prioritize initiatives and enhancements.</li>
+                </ul>
+                <div class="key-achievements">
+                    <div class="key-achievements-title">🏆 Key Achievements</div>
+                    <div class="achievements-grid">
+                        <span class="achievement-item">+40% Arabi Extra customer base</span>
+                        <span class="achievement-item">+60% segment revenues</span>
+                        <span class="achievement-item">+23% credit card users</span>
+                        <span class="achievement-item">+15% customer engagement</span>
+                        <span class="achievement-item">-18% attrition rate</span>
+                        <span class="achievement-item">+7% Cross-Border customers</span>
+                        <span class="achievement-item">120% Assets KPIs achieved</span>
+                        <span class="achievement-item">140% Liabilities KPIs achieved</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Syarah -->
+            <div class="experience-item">
+                <div class="experience-top">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h4>Senior Product Manager</h4>
+                            <p class="experience-company-location">Syarah · Jordan & KSA</p>
+                        </div>
+                        <span class="period">Oct 2021 – Apr 2022</span>
+                    </div>
+                </div>
+                <p class="experience-products">Web Portal & Mobile App</p>
+                <div class="key-impact">
+                    <div class="key-impact-title">◎ Key Impact</div>
+                    <div class="impact-badges">
+                        <span class="impact-badge">Product Roadmaps</span>
+                        <span class="impact-badge">Full Lifecycle Management</span>
+                        <span class="impact-badge">Customer-Centric Delivery</span>
+                    </div>
+                </div>
+                <ul class="experience-bullets">
+                    <li>Defined product roadmaps aligned with company growth objectives.</li>
+                    <li>Managed full product lifecycle from discovery to execution.</li>
+                    <li>Translated strategy into prototypes and prioritized backlogs.</li>
+                    <li>Collaborated with tech teams to deliver iterative, customer-centric improvements.</li>
+                    <li>Led testing and continuous optimization to improve engagement and revenue alignment.</li>
+                </ul>
+            </div>
+
+            <!-- Little Thinking Minds -->
+            <div class="experience-item">
+                <div class="experience-top">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h4>Product Manager</h4>
+                            <p class="experience-company-location">Little Thinking Minds · Jordan</p>
+                        </div>
+                        <span class="period">Jan 2021 – Sep 2021</span>
+                    </div>
+                </div>
+                <p class="experience-products">I Learn Arabic · Arab Easy</p>
+                <div class="key-impact">
+                    <div class="key-impact-title">◎ Key Impact</div>
+                    <div class="impact-badges">
+                        <span class="impact-badge">EdTech Product Vision</span>
+                        <span class="impact-badge">Market Research</span>
+                        <span class="impact-badge">Backlog Ownership</span>
+                    </div>
+                </div>
+                <ul class="experience-bullets">
+                    <li>Defined long-term product vision and lifecycle strategy.</li>
+                    <li>Managed products from concept through design, testing, launch, and growth.</li>
+                    <li>Led market research and marketing planning.</li>
+                    <li>Owned backlog creation, prioritization, and sprint planning.</li>
+                    <li>Analyzed impact of new requirements and scope changes.</li>
+                </ul>
+            </div>
+
+            <!-- Orange Jordan -->
+            <div class="experience-item">
+                <div class="experience-top">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h4>Products & Services Marketing Expert</h4>
+                            <p class="experience-company-location">Orange Jordan / Orange Money · Jordan</p>
+                        </div>
+                        <span class="period">May 2017 – Jan 2021</span>
+                    </div>
+                </div>
+                <p class="experience-products">Orange Max It · Orange Roaming Kit · Orange Money App · Orange Website</p>
+                <div class="key-impact">
+                    <div class="key-impact-title">◎ Key Impact</div>
+                    <div class="impact-badges">
+                        <span class="impact-badge">Customer Segmentation</span>
+                        <span class="impact-badge">Digital Product Growth</span>
+                        <span class="impact-badge">Roaming & International Tariffs</span>
+                        <span class="impact-badge">Wallet & Cards</span>
+                        <span class="impact-badge">Marketing & Sales Enablement</span>
+                    </div>
+                </div>
+                <ul class="experience-bullets">
+                    <li>Owned product and commercial initiatives for Ethnic Customers & International Segments.</li>
+                    <li>Led customer segmentation and end-to-end journey design, tailoring propositions across mobile apps and web.</li>
+                    <li>Managed international tariffs and roaming propositions for Orange Max It, Roaming Kit, and website.</li>
+                    <li>Conducted market studies, competitive analysis, user research, and customer interviews.</li>
+                    <li>Worked from inception on Orange Money App, contributing to feature definition, UX/UI design, and roadmap.</li>
+                    <li>Led initiatives for digital and physical Orange Money debit cards.</li>
+                    <li>Delivered self-registration journey allowing customers to onboard independently.</li>
+                </ul>
+                <div class="key-achievements">
+                    <div class="key-achievements-title">🏆 Key Achievements</div>
+                    <div class="achievements-grid">
+                        <span class="achievement-item">+33% Egyptian customer segment</span>
+                        <span class="achievement-item">+20% conversion rate</span>
+                        <span class="achievement-item">-17% churn rate</span>
+                        <span class="achievement-item">+25% Orange Money customers</span>
+                        <span class="achievement-item">+30% cardholders</span>
+                        <span class="achievement-item">+20% card usage</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pencilz Art Studios -->
+            <div class="experience-item">
+                <div class="experience-top">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h4>Project Coordinator / Project Manager</h4>
+                            <p class="experience-company-location">Pencilz Art Studios · Jordan</p>
+                        </div>
+                        <span class="period">Feb 2013 – May 2017</span>
+                    </div>
+                </div>
+                <ul class="experience-bullets">
+                    <li>Managed a portfolio of training programs and annual training calendar.</li>
+                    <li>Delivered product briefings and enablement for trainers and front-desk staff.</li>
+                    <li>Built performance reports using enrollment, attendance, and revenue data.</li>
+                    <li>Collaborated with marketing on social campaigns to improve conversions.</li>
+                    <li>Recommended program launches, scaling, or discontinuation based on data.</li>
+                </ul>
+            </div>
+
+            <!-- Capital Bank -->
+            <div class="experience-item">
+                <div class="experience-top">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h4>Reports Analysis & Preparation Officer</h4>
+                            <p class="experience-company-location">Capital Bank · Jordan</p>
+                        </div>
+                        <span class="period">Aug 2013 – Dec 2015</span>
+                    </div>
+                </div>
+                <ul class="experience-bullets">
+                    <li>Prepared and analyzed financial and management reports.</li>
+                    <li>Delivered insights supporting strategic decision-making.</li>
+                    <li>Owned reporting for Lending Limits, Name Lending, Non-Performing Loans, and Provisioning.</li>
+                </ul>
+            </div>
+
+            <!-- ICS Financial Systems -->
+            <div class="experience-item">
+                <div class="experience-top">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h4>Product Support Officer</h4>
+                            <p class="experience-company-location">ICSFS · Jordan</p>
+                        </div>
+                        <span class="period">Aug 2012 – Aug 2013</span>
+                    </div>
+                </div>
+                <p class="experience-products">BANKS System</p>
+                <ul class="experience-bullets">
+                    <li>Provided technical support and issue resolution.</li>
+                    <li>Collaborated with development teams to improve product performance.</li>
+                    <li>Delivered product training to clients and internal teams.</li>
+                    <li>Captured customer requirements and fed insights into product enhancements.</li>
+                </ul>
+            </div>
+
         </section>
 
         <!-- Tech Stack Section -->
@@ -694,194 +1105,6 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2 class="section-title">Experience</h2>
-
-            <!-- Ejada Systems -->
-            <div class="experience-item">
-                <div class="experience-top">
-                    <div class="experience-header">
-                        <div class="experience-title-section">
-                            <h4>Senior Product Owner</h4>
-                            <p class="experience-company-location">Ejada Systems / Neoleap-Urpay Wallet · Jordan & KSA</p>
-                        </div>
-                        <span class="period">Sep 2024 – Oct 2025</span>
-                    </div>
-                </div>
-                <div class="key-impact">
-                    <div class="key-impact-title">◎ Key Impact</div>
-                    <div class="impact-badges">
-                        <span class="impact-badge">Digital wallet product ownership</span>
-                        <span class="impact-badge">Cross-functional team leadership</span>
-                        <span class="impact-badge">Fintech product strategy</span>
-                    </div>
-                </div>
-                <ul class="experience-bullets">
-                    <li>Defined product vision aligned with company strategy and regulatory requirements for Urpay digital wallet.</li>
-                    <li>Owned and prioritized product backlog for large-scale fintech and digital banking solutions.</li>
-                    <li>Coordinated with stakeholders across business, tech, risk, and operations teams.</li>
-                </ul>
-            </div>
-
-            <!-- Arab Bank -->
-            <div class="experience-item">
-                <div class="experience-top">
-                    <div class="experience-header">
-                        <div class="experience-title-section">
-                            <h4>Business Program Manager</h4>
-                            <p class="experience-company-location">Arab Bank · Jordan</p>
-                        </div>
-                        <span class="period">Apr 2022 – May 2024</span>
-                    </div>
-                </div>
-                <div class="key-impact">
-                    <div class="key-impact-title">◎ Key Impact</div>
-                    <div class="impact-badges">
-                        <span class="impact-badge">Digital transformation programs</span>
-                        <span class="impact-badge">Product roadmap ownership</span>
-                        <span class="impact-badge">Cross-team coordination</span>
-                    </div>
-                </div>
-                <ul class="experience-bullets">
-                    <li>Developed and executed digital product strategies aligned with bank objectives.</li>
-                    <li>Managed product roadmaps, prioritizing features based on business value and customer impact.</li>
-                    <li>Led end-to-end delivery from ideation to launch, coordinating with tech, UX, and operations.</li>
-                </ul>
-            </div>
-
-            <!-- Syarah -->
-            <div class="experience-item">
-                <div class="experience-top">
-                    <div class="experience-header">
-                        <div class="experience-title-section">
-                            <h4>Senior Product Manager</h4>
-                            <p class="experience-company-location">Syarah · Jordan & KSA</p>
-                        </div>
-                        <span class="period">Oct 2021 – Apr 2022</span>
-                    </div>
-                </div>
-                <div class="key-impact">
-                    <div class="key-impact-title">◎ Key Impact</div>
-                    <div class="impact-badges">
-                        <span class="impact-badge">E-commerce platform growth</span>
-                        <span class="impact-badge">User experience optimization</span>
-                        <span class="impact-badge">Automotive marketplace</span>
-                    </div>
-                </div>
-                <ul class="experience-bullets">
-                    <li>Led product strategy for automotive e-commerce platform serving Jordan and KSA markets.</li>
-                    <li>Drove user experience improvements and conversion optimization initiatives.</li>
-                    <li>Collaborated with engineering and design teams to deliver key platform features.</li>
-                </ul>
-            </div>
-
-            <!-- Little Thinking Minds -->
-            <div class="experience-item">
-                <div class="experience-top">
-                    <div class="experience-header">
-                        <div class="experience-title-section">
-                            <h4>Product Manager</h4>
-                            <p class="experience-company-location">Little Thinking Minds · Jordan</p>
-                        </div>
-                        <span class="period">Jan 2021 – Sep 2021</span>
-                    </div>
-                </div>
-                <div class="key-impact">
-                    <div class="key-impact-title">◎ Key Impact</div>
-                    <div class="impact-badges">
-                        <span class="impact-badge">EdTech product development</span>
-                        <span class="impact-badge">Arabic learning platform</span>
-                        <span class="impact-badge">User engagement growth</span>
-                    </div>
-                </div>
-                <ul class="experience-bullets">
-                    <li>Managed product lifecycle for Arabic language EdTech platform.</li>
-                    <li>Drove feature development and user engagement initiatives.</li>
-                    <li>Worked with content and engineering teams to enhance learning experience.</li>
-                </ul>
-            </div>
-
-            <!-- Orange Jordan -->
-            <div class="experience-item">
-                <div class="experience-top">
-                    <div class="experience-header">
-                        <div class="experience-title-section">
-                            <h4>Products & Services Marketing Expert</h4>
-                            <p class="experience-company-location">Orange Jordan / Orange Money · Jordan</p>
-                        </div>
-                        <span class="period">May 2017 – Jan 2021</span>
-                    </div>
-                </div>
-                <div class="key-impact">
-                    <div class="key-impact-title">◎ Key Impact</div>
-                    <div class="impact-badges">
-                        <span class="impact-badge">Mobile money product launch</span>
-                        <span class="impact-badge">Go-to-market execution</span>
-                        <span class="impact-badge">KPI-driven optimization</span>
-                    </div>
-                </div>
-                <ul class="experience-bullets">
-                    <li>Managed end-to-end lifecycle of products from concept through launch and monitoring.</li>
-                    <li>Led go-to-market initiatives across digital, retail, and call center channels.</li>
-                    <li>Gathered requirements, prioritized backlogs, and coordinated with technical teams.</li>
-                </ul>
-            </div>
-
-            <!-- Pencilz Art Studios -->
-            <div class="experience-item">
-                <div class="experience-top">
-                    <div class="experience-header">
-                        <div class="experience-title-section">
-                            <h4>Project Coordinator / Manager</h4>
-                            <p class="experience-company-location">Pencilz Art Studios · Jordan</p>
-                        </div>
-                        <span class="period">Feb 2013 – May 2017</span>
-                    </div>
-                </div>
-                <ul class="experience-bullets">
-                    <li>Owned portfolio of training programs, managing annual calendar and delivery.</li>
-                    <li>Used enrollment and revenue data to evaluate program performance.</li>
-                    <li>Collaborated with marketing on social media campaigns to improve conversions.</li>
-                </ul>
-            </div>
-
-            <!-- Capital Bank -->
-            <div class="experience-item">
-                <div class="experience-top">
-                    <div class="experience-header">
-                        <div class="experience-title-section">
-                            <h4>Reports Analysis Officer</h4>
-                            <p class="experience-company-location">Capital Bank of Jordan · Jordan</p>
-                        </div>
-                        <span class="period">Aug 2013 – Dec 2015</span>
-                    </div>
-                </div>
-                <ul class="experience-bullets">
-                    <li>Analyzed financial data and prepared standardized reports.</li>
-                    <li>Identified data trends for strategic planning and decision-making.</li>
-                </ul>
-            </div>
-
-            <!-- ICS Financial Systems -->
-            <div class="experience-item">
-                <div class="experience-top">
-                    <div class="experience-header">
-                        <div class="experience-title-section">
-                            <h4>Product Support Officer</h4>
-                            <p class="experience-company-location">ICS Financial Systems · Jordan</p>
-                        </div>
-                        <span class="period">Aug 2012 – Aug 2013</span>
-                    </div>
-                </div>
-                <ul class="experience-bullets">
-                    <li>Provided technical support and collaborated with development teams.</li>
-                    <li>Captured client requirements, feeding them into product roadmap.</li>
-                </ul>
-            </div>
-
-        </section>
-
         <!-- Certifications Section -->
         <section id="certifications" class="section">
             <h2 class="section-title">Certifications</h2>
@@ -951,30 +1174,18 @@
 
         <!-- Contact Section -->
         <section id="contact" class="section">
-            <h2 class="section-title">Let's Connect</h2>
+            <h2 class="section-title">Get in Touch</h2>
+            
+            <p class="contact-intro">Interested in working together or discussing product strategy? Feel free to reach out through any of the channels below.</p>
 
-            <div class="contact-buttons">
-                <a href="https://www.linkedin.com/in/mohammad-sabouh-5b032aa8/" class="btn" target="_blank">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    Connect on LinkedIn
+            <div class="contact-social-buttons">
+                <a href="https://www.linkedin.com/in/mohammad-sabouh-5b032aa8/" target="_blank">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
                 </a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Mohammad.sabouh@outlook.com" class="btn btn-secondary" target="_blank">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-                    Send Email
+                <a href="/cdn-cgi/l/email-protection#cd80a2a5aca0a0aca9e3beacafa2b8a58da2b8b9a1a2a2a6e3aea2a0">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                    Email
                 </a>
-                <a href="https://wa.me/962779922033" class="btn btn-secondary" target="_blank">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Get in Touch
-                </a>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>Made with ❤️ by <a href="https://github.com/MohSabouh">Mohammad Sabouh</a></p>
-    </footer>
-
-</body>
-</html>
+                <a href="https://wa.me/962779922033" target="_blank">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.
